@@ -1,73 +1,124 @@
-<p align="center">
-  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="200" alt="Nest Logo" /></a>
-</p>
+Updatewd Finance Backend
 
-[circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
-[circleci-url]: https://circleci.com/gh/nestjs/nest
+Overview
 
-  <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
-    <p align="center">
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="NPM Downloads" /></a>
-<a href="https://circleci.com/gh/nestjs/nest" target="_blank"><img src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI" /></a>
-<a href="https://coveralls.io/github/nestjs/nest?branch=master" target="_blank"><img src="https://coveralls.io/repos/github/nestjs/nest/badge.svg?branch=master#9" alt="Coverage" /></a>
-<a href="https://discord.gg/G7Qnnhy" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
-<a href="https://opencollective.com/nest#backer" target="_blank"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
-<a href="https://opencollective.com/nest#sponsor" target="_blank"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
-  <a href="https://paypal.me/kamilmysliwiec" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg"/></a>
-    <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
-  <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow"></a>
-</p>
-  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
-  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
+This is the backend for the MangopayNewDomo application, a real estate investment platform that allows users to purchase tokenized shares of real estate projects. The backend handles critical business logic such as wallet management, blockchain interactions, and MangoPay integration.
 
-## Description
+Core Features
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+MangoPay Integration:
+Wallet top-ups.
+Token purchases via MangoPay wallets.
 
-## Installation
+Blockchain Interactions:
 
-```bash
-$ npm install
-```
+Tokenized share purchases using MetaMask and Web3.
+Smart contract interactions.
 
-## Running the app
+Firebase Integration:
 
-```bash
-# development
-$ npm run start
+Real-time updates for investment tracking.
+Cloud Functions for scalable backend logic.
 
-# watch mode
-$ npm run start:dev
+NestJS Framework:
 
-# production mode
-$ npm run start:prod
-```
+A robust and scalable architecture for API development.
 
-## Test
+Project Structure
+Here is an overview of the main directories:
 
-```bash
-# unit tests
-$ npm run test
+authentication/: Handles user authentication logic.
+bank/: Manages banking-related operations.
+blockchain/: Contains blockchain-specific logic and interactions.
+creditcard/: Handles credit card operations for payments.
+email/: Manages email notifications.
+firebase/: Contains Firebase integration logic.
+mangopay/: Manages MangoPay wallet and transaction logic.
+notifications/: Handles system and user notifications.
+projects/: Manages project-related data and logic.
+public/: Static files.
+redsys/: Manages integration with Redsys payment gateway.
+utils/: Utility functions and reusable logic.
 
-# e2e tests
-$ npm run test:e2e
+Getting Started
 
-# test coverage
-$ npm run test:cov
-```
+Follow these steps to set up the backend locally.
 
-## Support
+Prerequisites
 
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
+Node.js: Ensure Node.js is installed on your machine.
 
-## Stay in touch
+NestJS CLI: Install NestJS CLI globally using:
 
-- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
+npm install -g @nestjs/cli
+MongoDB: Install MongoDB for database operations (if required).
 
-## License
+Installation
+Clone the repository:
 
-Nest is [MIT licensed](LICENSE).
+git clone https://github.com/yourusername/MangopayNewDomo-backend.git
+
+cd MangopayNewDomo-backend
+Install dependencies:
+
+npm install
+
+
+FIREBASE_CONFIG=your_firebase_configuration
+MANGOPAY_API_KEY=your_mangopay_api_key
+WEB3_PROVIDER_URL=your_web3_provider_url
+Running the Application
+Start the server in development mode:
+
+
+npm run start:dev
+
+The backend will be available at http://localhost:3000.
+
+API Endpoints
+
+Here are some key API endpoints:
+
+Authentication:
+
+POST /auth/login: User login.
+POST /auth/register: User registration.
+
+Wallets:
+
+POST /wallet/top-up: Top up a MangoPay wallet.
+GET /wallet/balance: Retrieve wallet balance.
+
+Projects:
+
+GET /projects: Fetch all real estate projects.
+POST /projects/invest: Invest in a project.
+
+Blockchain:
+
+POST /blockchain/transaction: Initiate a blockchain transaction.
+
+Built With
+
+NestJS: Backend framework for scalable APIs.
+Firebase: Real-time database and cloud functions.
+Web3.js: Library for blockchain interactions.
+MangoPay: Payment gateway for secure transactions.
+
+Contributing
+
+Contributions are welcome! Follow these steps to contribute:
+
+Fork the repository.
+Create your feature branch:
+git checkout -b feature/AmazingFeature
+Commit your changes:
+git commit -m 'Add some AmazingFeature'
+Push to the branch:
+git push origin feature/AmazingFeature
+
+Open a Pull Request.
+
+License
+
+Distributed under the MIT License. See LICENSE for more information.
